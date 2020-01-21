@@ -2,25 +2,20 @@ import React  from 'react';
 import { Form, Input, Button } from 'antd';
 import { FormComponentProps } from 'antd/es/form';
 const { TextArea } = Input;
-interface UserFormProps extends FormComponentProps {
-  submit: Function | null
-}
-class TextInput extends React.Component<UserFormProps, any> {
+class TextInput extends React.Component<FormComponentProps, any> {
   render(){
     const form = this.props.form;
     const { getFieldDecorator } = form;
     const onSubmit = (e:React.FormEvent)=>{
       e.preventDefault();
       const text = form.getFieldValue('text');
-      if (this.props.submit){
-        this.props.submit(text);
-      }
+      console.log(text);
     }
     return (
       <Form onSubmit={onSubmit} className='TextInput'>
         <Form.Item>
           {getFieldDecorator('text')(
-            <TextArea rows={4} />
+            <TextArea allowClear rows={4} />
           )
           }
           <Button block htmlType="submit">确认</Button>
@@ -30,4 +25,4 @@ class TextInput extends React.Component<UserFormProps, any> {
   }
 }
 
-export default Form.create<UserFormProps>()(TextInput);
+export default Form.create<FormComponentProps>()(TextInput);

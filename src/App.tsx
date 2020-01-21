@@ -6,14 +6,11 @@ import TemplateType from './components/TemplateType';
 import './App.css';
 
 const App: React.FC = () => {
-  const submit = (text:string)=>{
-    console.log(text);
-  }
   return (
     <div className="App col-flex">
       <div className="row-flex one-grow">
         <div className="col-flex one-grow">
-          <TextInput submit={submit} />
+          <TextInput />
           <TemplateType />
         </div>
         <VideoCanvas />
