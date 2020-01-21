@@ -16,7 +16,6 @@ class VideoCanvas extends React.Component<{}, IState>{
   componentDidMount(){
     const canvas = document.getElementById(this.state.id) as HTMLCanvasElement;
     const ctx = canvas.getContext('2d');
-
     if (ctx){
       const system = new System(ctx);
       this.setState({system});
