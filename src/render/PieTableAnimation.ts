@@ -4,7 +4,7 @@ type PieTableData = {
   value: number,
   name: string,
 }[]
-class PieTable extends Base{
+class PieTableAnimation extends Base{
   myChart: echarts.ECharts;
   constructor(tableData: PieTableData){
     super();
@@ -22,7 +22,7 @@ class PieTable extends Base{
                   show: false
               },
               data: tableData,
-              animation: false,
+              animationDurating: 1000,
           }
       ]
     };
@@ -39,4 +39,4 @@ class PieTable extends Base{
   }
 }
 
-export default PieTable;
+export default PieTableAnimation;
