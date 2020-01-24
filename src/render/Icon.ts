@@ -6,7 +6,7 @@ class Icon extends Base{
     this.img = img;
   }
   public render = (ctx: CanvasRenderingContext2D)=>{
-    ctx.drawImage(this.img, this.x, this.y);
+    this._render(ctx, this.img);
   }
 }
 export default Icon;

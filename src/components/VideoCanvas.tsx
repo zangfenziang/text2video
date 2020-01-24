@@ -22,7 +22,7 @@ class VideoCanvas extends React.Component<{}, IState>{
       this.setState({system});
     }
     // @ts-ignore
-    const stream = canvas.captureStream(60) as MediaStream;
+    const stream = canvas.captureStream(30) as MediaStream;
     // @ts-ignore
     const recorder = new MediaRecorder(stream, {
       mimeType: 'video/webm;codecs=vp9',

@@ -1,5 +1,6 @@
 import PieTable from './PieTable';
 import PieTableAnimation from './PieTableAnimation';
+import TWEEN from '@tweenjs/tween.js';
 
 type Data = PieTable[];
 
@@ -19,13 +20,14 @@ class System{
     const pieTable = new PieTable(data);
     pieTableAnimation.x = 400;
     this.vector = [pieTable, pieTableAnimation];
-    this.render();
+    requestAnimationFrame(this.animate);
   }
   public render = () => {
-    requestAnimationFrame(this.render);
-    this.vector.forEach(item=>{
-      item.render(this.ctx);
-    })
+  }
+  public animate = (time: number) => {
+    requestAnimationFrame(this.animate);
+    TWEEN.update(time);
+    this.render();
   }
 }
 export default System;

@@ -34,7 +34,7 @@ class PieTable extends Base{
     const img = new Image();
     img.src = url;
     requestAnimationFrame(()=>{
-      ctx.drawImage(img, this.x, this.y);
+      this._render(ctx, img);
     })
   }
 }

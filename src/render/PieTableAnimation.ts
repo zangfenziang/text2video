@@ -30,11 +30,12 @@ class PieTableAnimation extends Base{
     this.myChart = myChart;
   }
   render(ctx: CanvasRenderingContext2D){
-    const url = this.myChart.getDataURL({});
+    const url = this.myChart.getDataURL({
+    });
     const img = new Image();
     img.src = url;
     requestAnimationFrame(()=>{
-      ctx.drawImage(img, this.x, this.y);
+      this._render(ctx, img);
     })
   }
 }
